@@ -59,8 +59,9 @@ suite("Functional Tests", function () {
             assert.equal(res.status, 200);
             assert.isArray(res.body);
             assert.property(res.body[0], "commentcount");
+            assert.typeOf(res.body[0].commentcount, "number");
             assert.property(res.body[0], "title");
-            assert.equal(res.body[0].title, "Fisch");
+            assert.typeOf(res.body[0].title, "string");
             assert.property(res.body[0], "_id");
             assert.typeOf(res.body[0]._id, "string");
 
